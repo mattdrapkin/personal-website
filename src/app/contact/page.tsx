@@ -36,8 +36,8 @@ export default function Contact() {
                             Contact
                         </h1>
                         <p className='mt-4 text-lg text-neutral-600 dark:text-neutral-400'>
-                            Always happy to connect; whether its over tech, investing, basketball,
-                            book recommendations, or life in general.
+                            Always happy to connect; reach out to talk tech, investing, basketball,
+                            book recommendations, or anything else you&apos;d like to chat about!
                         </p>
                     </div>
 
