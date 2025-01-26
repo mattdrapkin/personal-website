@@ -20,8 +20,8 @@ export default function Home() {
                 }}
                 className='mx-auto max-w-4xl px-4 text-center text-2xl font-bold leading-relaxed text-black dark:text-white md:text-4xl lg:text-5xl lg:leading-snug'>
                 My name is{' '}
-                <Highlight className='text-black dark:text-white'>Matt Drapkin</Highlight>. I&apos;m
-                passionate about tech, investing, and basketball. Welcome!
+                <Highlight>Matt Drapkin</Highlight>. I&apos;m passionate about tech, investing, and
+                basketball. Welcome!
             </motion.h1>
         </HeroHighlight>
     );

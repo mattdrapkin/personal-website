@@ -1,5 +1,5 @@
-import { Providers } from '@/components/providers';
 import { Header } from '@/components/header';
+import { Providers } from '@/components/providers';
 import { serverEnvs } from '@/env/server';
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
@@ -53,9 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 }`}>
                 <Providers>
                     <Header />
-                    <main className="pt-20">
-                        {children}
-                    </main>
+                    <main className='pt-20'>{children}</main>
                 </Providers>
             </body>
         </html>

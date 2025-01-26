@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
+import { motion, useMotionTemplate } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 export const HeroHighlight = ({
@@ -35,29 +35,16 @@ export const HeroHighlight = ({
   }, []);
 
   return (
-    <div className={cn("relative group", containerClassName)}>
+    <div className={cn("relative flex min-h-screen items-center justify-center", containerClassName)}>
       <div className="pointer-events-none absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800" />
       <motion.div
-        className={cn("pointer-events-none absolute inset-0", className)}
+        className="pointer-events-none absolute inset-0"
         style={{
-          WebkitMaskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${position.x}px ${position.y}px,
-              black 0%,
-              transparent 100%
-            )
-          `,
-          maskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${position.x}px ${position.y}px,
-              black 0%,
-              transparent 100%
-            )
-          `,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(29,78,216,0.15), transparent 80%)`,
           opacity,
         }}
       />
-      {children}
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };
@@ -88,8 +75,8 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 dark:from-indigo-500 dark:to-purple-500`,
-        className
+        "relative inline-block rounded-lg bg-gradient-to-r from-indigo-300 to-purple-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500",
+        className,
       )}
     >
       {children}
