@@ -37,13 +37,20 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
+    icons: {
+        icon: '/logo_small.png',
+        shortcut: '/logo_small.png',
+        apple: '/logo_small.png',
+    },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang='en' dir='ltr' suppressHydrationWarning>
             <body
-                className={`${inter.variable} ${jb.variable} ${serverEnvs.NODE_ENV === 'development' ? 'debug-screens' : ''}`}>
+                className={`${inter.variable} ${jb.variable} ${
+                    serverEnvs.NODE_ENV === 'development' ? 'debug-screens' : ''
+                }`}>
                 <Providers>
                     <Header />
                     <main className="pt-20">

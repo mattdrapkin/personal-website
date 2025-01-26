@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export const HeroHighlight = ({
   children,
@@ -12,50 +12,52 @@ export const HeroHighlight = ({
   className?: string;
   containerClassName?: string;
 }) => {
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
 
-  function handleMouseMove({
-    currentTarget,
-    clientX,
-    clientY,
-  }: React.MouseEvent<HTMLDivElement>) {
-    if (!currentTarget) return;
-    let { left, top } = currentTarget.getBoundingClientRect();
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      setPosition({ x, y });
+      setOpacity(1);
+    };
 
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
+    const handleMouseLeave = () => setOpacity(0);
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
-    <div
-      className={cn(
-        "relative h-[40rem] flex items-center bg-white dark:bg-black justify-center w-full group",
-        containerClassName
-      )}
-      onMouseMove={handleMouseMove}
-    >
-      <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800  pointer-events-none" />
+    <div className={cn("relative group", containerClassName)}>
+      <div className="pointer-events-none absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800" />
       <motion.div
-        className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+        className={cn("pointer-events-none absolute inset-0", className)}
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
+              200px circle at ${position.x}px ${position.y}px,
               black 0%,
               transparent 100%
             )
           `,
           maskImage: useMotionTemplate`
             radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
+              200px circle at ${position.x}px ${position.y}px,
               black 0%,
               transparent 100%
             )
           `,
+          opacity,
         }}
       />
-
-      <div className={cn("relative z-20", className)}>{children}</div>
+      {children}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 'use client';
+
 import { IconArrowNarrowRight } from '@tabler/icons-react';
 import { useEffect, useId, useRef, useState } from 'react';
 
@@ -21,7 +22,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
 
     const xRef = useRef(0);
     const yRef = useRef(0);
-    const frameRef = useRef<number>();
+    const frameRef = useRef<number>(0);
 
     useEffect(() => {
         const animate = () => {
@@ -106,9 +107,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
                     current === index ? 'visible opacity-100' : 'invisible opacity-0'
                 }`}>
-                <h2 className='relative text-lg font-semibold md:text-2xl lg:text-4xl'>
-                    {title}
-                </h2>
+                <h2 className='relative text-lg font-semibold md:text-2xl lg:text-4xl'>{title}</h2>
                 <div className='flex justify-center'>
                     <button className='mx-auto mt-6 flex h-12 w-fit items-center justify-center rounded-2xl border border-transparent bg-white px-4 py-2 text-xs text-black shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200 hover:shadow-lg sm:text-sm'>
                         {button}
@@ -160,9 +159,9 @@ export default function Carousel({ slides }: CarouselProps) {
             setCurrent(index);
         } else {
             const slide = slides[index];
-            if (slide.button.toLowerCase().includes('learn')) {
+            if (slide?.button.toLowerCase().includes('learn')) {
                 window.open(`/projects/${slide.title.toLowerCase().replace(/\s+/g, '-')}`, '_self');
-            } else if (slide.url) {
+            } else if (slide?.url) {
                 window.open(slide.url, '_blank');
             }
         }
@@ -173,7 +172,7 @@ export default function Carousel({ slides }: CarouselProps) {
     return (
         <div className='relative mx-auto size-[70vmin]' aria-labelledby={`carousel-heading-${id}`}>
             <ul
-                className='absolute mx-[-4vmin] flex perspective-[1200px] transform-style-[preserve-3d] transition-transform duration-1000 ease-in-out'
+                className='perspective-[1200px] transform-style-[preserve-3d] absolute mx-[-4vmin] flex transition-transform duration-1000 ease-in-out'
                 style={{
                     transform: `translateX(-${current * (100 / slides.length)}%)`,
                 }}>
