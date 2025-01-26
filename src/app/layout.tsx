@@ -3,6 +3,7 @@ import { Providers } from '@/components/providers';
 import { serverEnvs } from '@/env/server';
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import NextTopLoader from 'nextjs-toploader';
 import type { ReactNode } from 'react';
 
 import '@/styles/globals.css';
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     serverEnvs.NODE_ENV === 'development' ? 'debug-screens' : ''
                 }`}>
                 <Providers>
+                    <NextTopLoader />
                     <Header />
                     <main className='pt-20'>{children}</main>
                 </Providers>

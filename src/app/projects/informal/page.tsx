@@ -1,36 +1,49 @@
 'use client';
 
+import { LinkPreview } from '@/components/ui/link-preview';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const features = [
     {
-        title: 'Reading Experience',
+        title: 'What is inFormal?',
         description:
-            'A clean, distraction-free reading interface that lets users focus on content. The e-reader supports .epub files and provides a smooth reading experience with customizable font sizes, themes, and navigation controls.',
-        image: '/read.png',
+            'inFormal Clothing is a web-based application that allows Princeton students to borrow and lend clothing with each other. Any person with a valid Princeton netID can access our app, and each user can act as both a lender and a borrower.',
+        image: '/informal_landing.png',
     },
     {
-        title: 'Interactive Quizzes',
+        title: 'Seamless Borrowing and Lending',
         description:
-            "AI-generated questions test comprehension and retention. Questions are contextually relevant and adapt to the reader's progress through the text, ensuring effective learning and engagement.",
-        image: '/answering.png',
+            'Users can create listings, browse available items, and manage transactions with ease.',
+        image: '/borrow_lend.png',
     },
     {
-        title: 'Progress Tracking',
+        title: 'Robust Transaction System',
         description:
-            'Comprehensive review system that tracks progress over time. Users can revisit past questions, review their performance, and focus on areas that need more attention.',
-        image: '/review.png',
+            'Incorporates advanced features like black-out dates, transaction statuses, and user ratings to ensure a smooth borrowing and lending experience.',
+        image: '/transactions.png',
     },
     {
-        title: 'Smart Feedback System',
+        title: 'Responsive and Intuitive UI',
         description:
-            'Detailed explanations for both correct and incorrect answers, providing positive reinforcement and learning opportunities. The system adapts to user performance and provides personalized guidance.',
-        image: '/correct.png',
+            'Built with user-friendly design principles, the platform is accessible on desktop and mobile, featuring interactive elements and clear navigation.',
+        image: '/ui_design.png',
+    },
+    {
+        title: 'Advanced Features',
+        description:
+            'Includes user notifications, bookmarks, multi-image uploads, and profile editing. A points-based economy is used to manage transactions.',
+        image: '/features.png',
+    },
+    {
+        title: 'Extensive Testing and Feedback',
+        description:
+            'The system underwent rigorous testing, including internal, white-box, and black-box testing, as well as iterative user evaluations to optimize functionality.',
+        image: '/testing.png',
     },
 ];
 
-export default function Locked() {
+export default function InFormal() {
     return (
         <div className='relative min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 px-6 py-12 dark:from-neutral-950 dark:to-neutral-900'>
             {/* Hero Section */}
@@ -40,12 +53,19 @@ export default function Locked() {
                 transition={{ duration: 0.8 }}
                 className='mx-auto max-w-4xl text-center'>
                 <h1 className='bg-gradient-to-r from-neutral-900 to-neutral-500 bg-clip-text text-5xl font-bold text-transparent dark:from-neutral-100 dark:to-neutral-500'>
-                    Locked: The AI E-reader
+                    inFormal Clothing
                 </h1>
+                <h3 className='text-md neutral-900 mt-3 bg-clip-text text-transparent dark:text-neutral-500'>
+                    Developed by Katie Heller &apos;25, Brandon Cheng &apos;25, Caiden Kiani
+                    &apos;25, Jacob Santelli &apos;25, and Matt Drapkin &apos;25.
+                </h3>
                 <div className='mt-4 inline-flex items-center rounded-full bg-blue-100 px-4 py-2 dark:bg-blue-900/30'>
                     <span className='text-sm text-blue-800 dark:text-blue-300'>
-                        Princeton&apos;s Spring 2024 Exemplary Independent Work Award in Computer
-                        Science
+                        Selected by Princeton{' '}
+                        <LinkPreview url='https://www.tigerapps.org' className='font-semibold'>
+                            TigerApps
+                        </LinkPreview>{' '}
+                        to be onboarded into 2024 Academic Year.
                     </span>
                 </div>
             </motion.div>

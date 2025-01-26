@@ -8,6 +8,7 @@ interface SlideData {
     button: string;
     src: string;
     url?: string;
+    goto?: string;
 }
 
 interface SlideProps {
@@ -64,7 +65,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         event.currentTarget.style.opacity = '1';
     };
 
-    const { src, button, title, url } = slide;
+    const { src, button, title, url, goto } = slide;
 
     return (
         <li
@@ -159,8 +160,8 @@ export default function Carousel({ slides }: CarouselProps) {
             setCurrent(index);
         } else {
             const slide = slides[index];
-            if (slide?.button.toLowerCase().includes('learn')) {
-                window.open(`/projects/${slide.title.toLowerCase().replace(/\s+/g, '-')}`, '_self');
+            if (slide?.goto) {
+                window.open(`/projects/${slide.goto?.toLowerCase().replace(/\s+/g, '-')}`, '_self');
             } else if (slide?.url) {
                 window.open(slide.url, '_blank');
             }

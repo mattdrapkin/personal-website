@@ -5,32 +5,32 @@ import Image from 'next/image';
 
 const features = [
     {
-        title: 'Reading Experience',
+        title: 'Image Super-Resolution',
         description:
-            'A clean, distraction-free reading interface that lets users focus on content. The e-reader supports .epub files and provides a smooth reading experience with customizable font sizes, themes, and navigation controls.',
-        image: '/read.png',
+            'Leverages SRCNN (Super-Resolution Convolutional Neural Networks) to upscale low-resolution images to high resolution. It provides sharpness, contrast enhancement, and texture improvements, ensuring high-quality visual outputs.',
+        image: '/super_resolution.png',
     },
     {
-        title: 'Interactive Quizzes',
+        title: 'Dataset Diversity',
         description:
-            "AI-generated questions test comprehension and retention. Questions are contextually relevant and adapt to the reader's progress through the text, ensuring effective learning and engagement.",
-        image: '/answering.png',
+            'Trained on diverse datasets like DIV2K and Human Faces, ensuring adaptability to various use cases from real-world scenery to detailed facial features.',
+        image: '/datasets.png',
     },
     {
-        title: 'Progress Tracking',
+        title: 'Quantitative Metrics',
         description:
-            'Comprehensive review system that tracks progress over time. Users can revisit past questions, review their performance, and focus on areas that need more attention.',
-        image: '/review.png',
+            'Evaluates models using MSE, PSNR, and SSIM to ensure objective assessment of image quality and structural similarity. Demonstrates consistent performance across different datasets.',
+        image: '/metrics.png',
     },
     {
-        title: 'Smart Feedback System',
+        title: 'Innovative Architecture',
         description:
-            'Detailed explanations for both correct and incorrect answers, providing positive reinforcement and learning opportunities. The system adapts to user performance and provides personalized guidance.',
-        image: '/correct.png',
+            'Explores variations in convolutional filter sizes and downsampling factors to push the boundaries of SRCNN capabilities while maintaining computational efficiency.',
+        image: '/architecture.png',
     },
 ];
 
-export default function Locked() {
+export default function ComputerVisionProject() {
     return (
         <div className='relative min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 px-6 py-12 dark:from-neutral-950 dark:to-neutral-900'>
             {/* Hero Section */}
@@ -40,14 +40,12 @@ export default function Locked() {
                 transition={{ duration: 0.8 }}
                 className='mx-auto max-w-4xl text-center'>
                 <h1 className='bg-gradient-to-r from-neutral-900 to-neutral-500 bg-clip-text text-5xl font-bold text-transparent dark:from-neutral-100 dark:to-neutral-500'>
-                    Locked: The AI E-reader
+                    Image Super-Resolution with SRCNN
                 </h1>
-                <div className='mt-4 inline-flex items-center rounded-full bg-blue-100 px-4 py-2 dark:bg-blue-900/30'>
-                    <span className='text-sm text-blue-800 dark:text-blue-300'>
-                        Princeton&apos;s Spring 2024 Exemplary Independent Work Award in Computer
-                        Science
-                    </span>
-                </div>
+                <h3 className='text-md neutral-900 mt-3 bg-clip-text text-transparent dark:text-neutral-500'>
+                    Princeton COS 429 Spring 2024 Project by John Van Horn &apos;25, Clara
+                    Toujas-Bernate &apos;25, and Matt Drapkin &apos;25.
+                </h3>
             </motion.div>
 
             {/* Features Section */}

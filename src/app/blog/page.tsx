@@ -5,33 +5,11 @@ import Link from 'next/link';
 
 const articles = [
     {
-        title: 'Building an AI-Powered E-reader: Lessons Learned',
-        description:
-            'My journey developing Locked, challenges faced, and insights gained along the way.',
-        date: 'January 20, 2024',
-        category: 'Tech',
-        slug: 'building-ai-ereader',
-    },
-    {
         title: 'The Future of Reading: AI and Education',
-        description: 'How artificial intelligence is transforming the way we read and learn.',
+        description: 'This is a placeholder. I need to start writing soon!',
         date: 'January 15, 2024',
         category: 'Education',
         slug: 'future-of-reading',
-    },
-    {
-        title: 'Princeton Basketball: Mid-Season Analysis',
-        description: "Breaking down the Tigers' performance and what to expect in the second half.",
-        date: 'January 10, 2024',
-        category: 'Basketball',
-        slug: 'princeton-basketball-analysis',
-    },
-    {
-        title: 'Tech Internship Experience at [Company]',
-        description: 'What I learned during my summer internship and tips for future interns.',
-        date: 'December 20, 2023',
-        category: 'Career',
-        slug: 'tech-internship-experience',
     },
 ];
 
