@@ -1,4 +1,5 @@
 import { Providers } from '@/components/providers';
+import { Header } from '@/components/header';
 import { serverEnvs } from '@/env/server';
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
@@ -27,11 +28,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
     title: {
-        default: 'Hono x Lucia',
-        template: '%s',
+        default: 'Matt Drapkin',
+        template: '%s | Matt Drapkin',
     },
-    keywords: ['hono', 'lucia', 'next.js', 'react'],
-    description: 'Hono x Lucia',
+    keywords: ['tech', 'investing', 'basketball', 'software engineering'],
+    description: 'Personal website of Matt Drapkin - Tech, Investing, and Basketball',
     robots: {
         index: true,
         follow: true,
@@ -43,7 +44,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang='en' dir='ltr' suppressHydrationWarning>
             <body
                 className={`${inter.variable} ${jb.variable} ${serverEnvs.NODE_ENV === 'development' ? 'debug-screens' : ''}`}>
-                <Providers>{children}</Providers>
+                <Providers>
+                    <Header />
+                    <main className="pt-20">
+                        {children}
+                    </main>
+                </Providers>
             </body>
         </html>
     );

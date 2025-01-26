@@ -11,7 +11,12 @@ const queryClient = new QueryClient();
 export function Providers({ children }: { children: ReactNode }) {
     return (
         <QueryClientProvider client={queryClient}>
-            <ThemeProvider attribute='class'>
+            <ThemeProvider
+                attribute='class'
+                defaultTheme='dark'
+                enableSystem={true}
+                storageKey='theme'
+                disableTransitionOnChange>
                 {children}
                 <ReactQueryDevtools />
                 <Toaster richColors />
