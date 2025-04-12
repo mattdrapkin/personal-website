@@ -49,6 +49,12 @@ const slideData = [
         goto: 'informal',
     },
     {
+        title: 'Predicting the Clutch in the 2022-23 NBA Season',
+        button: 'Learn more',
+        src: '/clutch_cover.jpg',
+        goto: 'clutch',
+    },
+    {
         title: 'The Daily Princetonian: MBB Beat Writer',
         button: 'See articles',
         src: '/princeton_mbb.jpg',
