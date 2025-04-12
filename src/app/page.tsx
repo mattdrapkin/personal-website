@@ -3,6 +3,7 @@
 import Carousel from '@/components/ui/carousel';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -12,15 +13,15 @@ const scrollToSection = (sectionId: string) => {
 };
 
 // Reusing the articles data from the blog page
-// const articles = [
-//     {
-//         title: 'The Future of Reading: AI and Education',
-//         description: 'This is a placeholder. I need to start writing soon!',
-//         date: 'January 15, 2024',
-//         category: 'Education',
-//         slug: 'future-of-reading',
-//     },
-// ];
+const articles = [
+    {
+        title: 'NGEN Trailblazers Conference – Spring 2025',
+        description: 'Reflections from a solo trip into the world of student entrepreneurship.',
+        date: 'April 12, 2025',
+        category: 'Entrepreneurship',
+        slug: 'ngen-conference-2025',
+    },
+];
 
 // Reusing the projects data
 const slideData = [
@@ -165,7 +166,7 @@ export default function Home() {
                         <p className='text-neutral-600 dark:text-neutral-400'>Coming soon...</p>
                     </motion.div>
 
-                    {/* <div className='grid gap-8'>
+                    <div className='grid gap-8'>
                         {articles.map((article, index) => (
                             <motion.article
                                 key={article.slug}
@@ -208,7 +209,7 @@ export default function Home() {
                                 </Link>
                             </motion.article>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
             </section>
             {/* Footer */}

@@ -13,8 +13,14 @@ const features = [
     {
         title: 'Intelligent Footnote Extraction',
         description:
-            'Effortlessly extract and organize footnotes from legal manuscripts. Our system automatically detects citation errors using Retrieval Augmented Generation (RAG) and offers AI-powered Bluebooking suggestions based on current legal standards.',
+            'Effortlessly extract and organize footnotes from legal manuscripts. Our system automatically detects citation errors and offers AI-powered Bluebooking suggestions based on current legal standards.',
         image: '/qc_footnotes.png',
+    },
+    {
+        title: 'RAG-Driven Citation Analyzer',
+        description:
+            'QuickCase uses Retrieval Augmented Generation (RAG) to analyze citations and provide detailed insights, greatly reducing the likelihood of hallucinations or faulty suggestions.',
+        image: '/qc_rag.png',
     },
     {
         title: 'AI-Powered Footnote Analysis',
@@ -58,6 +64,24 @@ export default function QuickCasePage() {
 
             {/* Features Section */}
             <div className='mx-auto mt-20 max-w-6xl'>
+                <h2 className='mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100'>
+                    The Problem
+                </h2>
+                <p className='mb-8 text-neutral-600 dark:text-neutral-400'>
+                    “Law Review” is one of the most prestigious extracurriculars for students in law
+                    school. However, the actual work required of editors can be tedious, mundane,
+                    and repetitive.
+                </p>
+                <h2 className='mb-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100'>
+                    What is QuickCase?
+                </h2>
+                <p className='mb-8 text-neutral-600 dark:text-neutral-400'>
+                    QuickCase, The AI-Powered Legal Editing Assistant, transforms a week-long
+                    editing process into one that can be completed in a single sitting. The process
+                    is simple: Upload your draft to catch any Bluebook formatting mistakes, gather
+                    all referenced sources at once, and find where each source adequately supports
+                    the claims made in the manuscript.
+                </p>
                 <div className='grid gap-16'>
                     {features.map((feature, index) => (
                         <motion.div
