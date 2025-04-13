@@ -15,8 +15,15 @@ const scrollToSection = (sectionId: string) => {
 // Reusing the articles data from the blog page
 const articles = [
     {
+        title: 'The Game',
+        description: "Why it's time for me to start a blog.",
+        date: 'April 11, 2025',
+        category: 'Personal Development',
+        slug: 'the-game',
+    },
+    {
         title: 'NGEN Trailblazers Conference – Spring 2025',
-        description: 'Reflections from a solo trip into the world of student entrepreneurship.',
+        description: 'Notes from the Ivy+ entrepreneurship conference.',
         date: 'April 12, 2025',
         category: 'Entrepreneurship',
         slug: 'ngen-conference-2025',
@@ -81,7 +88,8 @@ export default function Home() {
                     <div className='md:w-2/3'>
                         <h1 className='mb-4 text-4xl font-bold'>Hi, I&apos;m Matt.</h1>
                         <p className='mb-4 text-lg'>
-                            At Princeton, I&apos;ve tried my hand at{' '}
+                            I studied CS at Princeton, graduating in May 2025. There, I tried my
+                            hand at{' '}
                             <a
                                 href='https://www.dailyprincetonian.com/staff/matt-drapkin'
                                 target='_blank'
@@ -163,7 +171,6 @@ export default function Home() {
                         <p className='text-neutral-600 dark:text-neutral-400'>
                             Writing to improve my skills in writing.
                         </p>
-                        <p className='text-neutral-600 dark:text-neutral-400'>Coming soon...</p>
                     </motion.div>
 
                     <div className='grid gap-8'>
