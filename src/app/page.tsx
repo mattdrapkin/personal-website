@@ -22,13 +22,21 @@ const articles = [
         slug: 'the-game',
     },
     {
+        title: 'Never Let Them See You Sweat',
+        description:
+            'Notes from the Last Lectures: Nawaf Al-Sabah, CEO of Kuwait Petroleum Company.',
+        date: 'April 14, 2025',
+        category: 'Entrepreneurship',
+        slug: 'never-let-them-see-you-sweat',
+    },
+    {
         title: 'NGEN Trailblazers Conference – Spring 2025',
         description: 'Notes from the Ivy+ entrepreneurship conference.',
         date: 'April 12, 2025',
         category: 'Entrepreneurship',
         slug: 'ngen-conference-2025',
     },
-];
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Reusing the projects data
 const slideData = [
