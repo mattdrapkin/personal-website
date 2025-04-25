@@ -36,6 +36,13 @@ const articles = [
         category: 'Entrepreneurship',
         slug: 'ngen-conference-2025',
     },
+    {
+        title: '100,000 Shots',
+        description: 'Sharing the story of the hardest I have ever worked in my life.',
+        date: 'April 23, 2025',
+        category: 'Personal Development',
+        slug: '100k-shots',
+    },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Reusing the projects data

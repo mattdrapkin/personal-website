@@ -35,6 +35,6 @@
         "**/*.tsx",
         "**/*.mdx",
         ".next/types/**/*.ts"
-, "tailwind.config.js"    ],
+, "tailwind.config.js", "src/app/blog/100k-shots/shotsdashboard.tsx"    ],
     "exclude": ["node_modules"]
 }
