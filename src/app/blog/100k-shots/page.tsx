@@ -73,7 +73,7 @@ export default function OneHundredThousandShots() {
                     is a pretext for indolence. Nothing else I tried was working. Even if 100,000
                     shots wouldn’t make me an elite shooter, it sure as hell would make me a better
                     one— right? Just spending that much time, shooting 100,000 shots, watching the
-                    ball travel through the air that many times, trying to perfect the craft:
+                    ball travel through the air that many times, trying to perfect the craft—
                     surely, it would have to make me better. I couldn’t tell how much better. But
                     better nonetheless. Committing to obsession necessitates improvement.
                 </p>
@@ -86,8 +86,8 @@ export default function OneHundredThousandShots() {
                 <Image
                     src='/lockscreen.PNG'
                     alt='Lock screen'
-                    width={300}
-                    height={300}
+                    width={400}
+                    height={400}
                     className='mx-auto mb-6'
                 />
                 <p className='mb-6'>
@@ -152,7 +152,7 @@ export default function OneHundredThousandShots() {
                     good, consistent work. But I was only a fraction of the way there.
                 </p>
                 <p className='mb-6'>
-                    The challenge intensified in April, when AAU and high school ball overlapped:
+                    The challenge intensified in April, when AAU and high school ball overlapped—
                     Mondays and Wednesdays were AAU practice, and Tuesdays and Thursdays were high
                     school workouts. Weekends were usually AAU tournaments. I only counted shots
                     taken during individual workouts, not team practices or games. If I wanted to

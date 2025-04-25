@@ -38,7 +38,7 @@ const articles = [
     },
     {
         title: '100,000 Shots',
-        description: 'Sharing the story of the hardest I have ever worked in my life.',
+        description: 'Basketball made me who I am today. This is my story.',
         date: 'April 23, 2025',
         category: 'Personal Development',
         slug: '100k-shots',
