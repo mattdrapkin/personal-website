@@ -43,6 +43,13 @@ const articles = [
         category: 'Personal Development',
         slug: '100k-shots',
     },
+    {
+        title: 'Newly Graduated. Once Again, Terrified.',
+        description: 'I graduated from Princeton. Now what?',
+        date: 'May 29, 2025',
+        category: 'Personal Development',
+        slug: 'newly-graduated',
+    },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Reusing the projects data
