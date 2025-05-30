@@ -110,8 +110,9 @@ export default function Home() {
                     <div className='md:w-2/3'>
                         <h1 className='mb-4 text-4xl font-bold'>Hi, I&apos;m Matt.</h1>
                         <p className='mb-4 text-lg'>
-                            I studied CS at Princeton, graduating in May 2025. There, I tried my
-                            hand at{' '}
+                            I graduated with a degree in Computer Science and a minor in Statistics
+                            and Machine Learning from Princeton University in May 2025. There, I
+                            tried my hand at{' '}
                             <a
                                 href='https://www.dailyprincetonian.com/staff/matt-drapkin'
                                 target='_blank'
