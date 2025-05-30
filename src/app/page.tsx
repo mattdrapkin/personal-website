@@ -172,7 +172,7 @@ export default function Home() {
             </section>
 
             {/* Projects Section */}
-            <section id='projects' className='min-h-screen px-6 py-24'>
+            <section id='projects' className='min-h-screen overflow-x-hidden px-6 py-24'>
                 <div className='mx-auto max-w-6xl'>
                     <h2 className='mb-12 text-center text-3xl font-bold'>Projects</h2>
                     <div className='relative size-full'>
