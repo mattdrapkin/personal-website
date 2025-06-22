@@ -44,6 +44,8 @@ export const metadata: Metadata = {
     },
 };
 
+import { Analytics } from "@vercel/analytics/next";
+
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang='en' dir='ltr' suppressHydrationWarning>
@@ -55,6 +57,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <Navbar />
                     <main>{children}</main>
                 </Providers>
+                <Analytics />
             </body>
         </html>
     );
