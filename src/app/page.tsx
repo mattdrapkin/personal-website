@@ -129,30 +129,55 @@ export default function Home() {
                             <div className='block'>BUILDER</div>
                         </motion.h1>
 
+                        <motion.h2
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className='mb-12 font-serif leading-none tracking-tight text-[#1e5a35] dark:text-[#e9f0ec] md:text-xl'>
+                            <div className='block'>
+                                Passionate about building and investing in disruptive technologies.
+                            </div>
+                        </motion.h2>
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className='max-w-md text-lg text-[#496953] dark:text-[#b7d1c1]'>
-                            CS @ Princeton &middot; Investor at Princeton University Investment
-                            Company{' '}
-                            <Link
-                                href='https://princo.princeton.edu/'
-                                target='_blank'
-                                rel='noopener noreferrer'>
-                                (PRINCO)
-                            </Link>
+                            <div className='flex items-center gap-4'>
+                                <Image
+                                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/800px-Princeton_seal.svg.png'
+                                    alt='Princeton'
+                                    width={48}
+                                    height={48}
+                                    className='shrink-0'
+                                />
+                                <span>
+                                    Princeton CS &apos;25 &middot; Investment Analyst at{' '}
+                                    <Link
+                                        href='https://princo.princeton.edu/'
+                                        target='_blank'
+                                        className='text-blue-600 dark:text-blue-300'
+                                        rel='noopener noreferrer'>
+                                        PRINCO
+                                    </Link>
+                                </span>
+                            </div>
                         </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
-                            className='mt-16'>
+                            className='mt-16 flex gap-4'>
                             <button
                                 onClick={() => scrollToSection('projects')}
                                 className='border-2 border-[#1e5a35] px-8 py-3 text-sm font-medium uppercase tracking-wider text-[#1e5a35] transition-colors duration-300 hover:bg-[#1e5a35] hover:text-white dark:border-[#a6c9b5] dark:text-[#a6c9b5] dark:hover:bg-[#a6c9b5] dark:hover:text-[#1a1a1a]'>
                                 View Projects
+                            </button>
+                            <button
+                                onClick={() => scrollToSection('blog')}
+                                className='border-2 border-[#1e5a35] px-8 py-3 text-sm font-medium uppercase tracking-wider text-[#1e5a35] transition-colors duration-300 hover:bg-[#1e5a35] hover:text-white dark:border-[#a6c9b5] dark:text-[#a6c9b5] dark:hover:bg-[#a6c9b5] dark:hover:text-[#1a1a1a]'>
+                                View Blog
                             </button>
                         </motion.div>
                     </div>

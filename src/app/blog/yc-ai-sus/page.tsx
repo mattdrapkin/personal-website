@@ -119,8 +119,13 @@ export default function YCAIStartupSchool() {
                     </p>
 
                     <p className='mb-6'>
-                        This was my approach with my senior thesis, QuickCase (link here to QC
-                        blog). A model capable of complex problem-solving is necessary for verifying
+                        This was my approach with my senior thesis,{' '}
+                        <Link
+                            href='/projects/quickcase'
+                            className='text-blue-600 dark:text-blue-300'>
+                            QuickCase
+                        </Link>
+                        . A model capable of complex problem-solving is necessary for verifying
                         legal formatting minutia. OpenAI’s full version of o1 was released four
                         months into the development of QC. I didn’t know when the new model would
                         come, or exactly how powerful it’d be. But I knew it would come. And they
