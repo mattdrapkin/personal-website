@@ -50,6 +50,13 @@ const articles = [
         category: 'Personal Development',
         slug: 'newly-graduated',
     },
+    {
+        title: 'Y Combinator AI Startup School',
+        description: 'Notes from Elon Musk, Sam Altman, and more.',
+        date: 'June 22, 2025',
+        category: 'Entrepreneurship',
+        slug: 'yc-ai-sus',
+    },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 // Reusing the projects data
@@ -213,7 +220,23 @@ export default function Home() {
                                     </time>
                                 </div>
                                 <Link href={`/blog/${article.slug}`}>
-                                    <h2 className='mb-2 text-xl font-semibold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400'>
+                                    <h2 className='mb-2 flex items-center gap-2 text-xl font-semibold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400'>
+                                        {article.slug === 'yc-ai-sus' && (
+                                            <Image
+                                                src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Y_Combinator_logo.svg/1200px-Y_Combinator_logo.svg.png'
+                                                alt='Y Combinator Logo'
+                                                width={28}
+                                                height={28}
+                                                style={{
+                                                    height: '1.5em',
+                                                    width: 'auto',
+                                                    marginRight: 8,
+                                                    display: 'inline-block',
+                                                }}
+                                                className='inline align-middle'
+                                                priority
+                                            />
+                                        )}
                                         {article.title}
                                     </h2>
                                 </Link>

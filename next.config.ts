@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     images: {
         domains: [
             'api.microlink.io', // Microlink Image Preview
+            'pbs.twimg.com', // Twitter Images,
+            'substackcdn.com', // Substack Images
+            'singjupost.com', // Singju Post Images
+            'upload.wikimedia.org', // YC Logo
         ],
     },
 };
