@@ -103,78 +103,101 @@ export default function Home() {
     return (
         <div className='flex min-h-screen flex-col'>
             {/* Home Section */}
-            <section id='home' className='flex min-h-screen items-center px-6 pt-24'>
-                <div className='mx-auto flex max-w-4xl flex-col items-center gap-8 md:flex-row'>
-                    <div className='md:w-1/3'>
-                        <Image
-                            src='/selfie_pic.jpeg'
-                            alt='Matt Drapkin'
-                            width={600}
-                            height={600}
-                            className='rounded-sm shadow-lg'
-                        />
-                    </div>
-                    <div className='md:w-2/3'>
-                        <h1 className='mb-4 text-4xl font-bold'>Hi, I&apos;m Matt.</h1>
-                        <p className='mb-4 text-lg'>
-                            I graduated with a degree in Computer Science and a minor in Statistics
-                            and Machine Learning from Princeton University in May 2025. There, I
-                            tried my hand at{' '}
-                            <a
-                                href='https://www.dailyprincetonian.com/staff/matt-drapkin'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-blue-600 dark:text-blue-300'>
-                                journalism
-                            </a>
-                            ,{' '}
-                            <a
-                                href='https://www.amazon.jobs/content/en/teams/e-commerce-foundation/ascs'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-blue-600 dark:text-blue-300'>
-                                engineering
-                            </a>
-                            ,{' '}
-                            <a
-                                href='https://hack4impactprinceton.netlify.app/'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-blue-600 dark:text-blue-300'>
-                                {' '}
-                                design
-                            </a>
-                            , and most recently,
-                            <a
+            <section
+                id='home'
+                className='relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-10'>
+                {/* Minimalist Background */}
+                <div className='pointer-events-none absolute inset-0 -z-10 size-full bg-[#faf8f5] dark:bg-[#1a1a1a]' />
+
+                <div className='mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2'>
+                    {/* Left Column: Large Typography */}
+                    <div className='order-2 flex flex-col md:order-1'>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className='mb-3 text-sm font-medium uppercase tracking-widest text-[#1e5a35] dark:text-[#a6c9b5]'>
+                            Matt Drapkin
+                        </motion.div>
+
+                        <motion.h1
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className='mb-12 font-serif text-[5rem] leading-none tracking-tight text-[#1e5a35] dark:text-[#e9f0ec] md:text-[7rem]'>
+                            <div className='block'>TECH</div>
+                            <div className='block'>BUILDER</div>
+                        </motion.h1>
+
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className='max-w-md text-lg text-[#496953] dark:text-[#b7d1c1]'>
+                            CS @ Princeton &middot; Investor at Princeton University Investment
+                            Company{' '}
+                            <Link
                                 href='https://princo.princeton.edu/'
                                 target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-blue-600 dark:text-blue-300'>
-                                {' '}
-                                investing.
-                            </a>
-                        </p>
-                        <p className='mb-4 text-lg'>
-                            I&apos;m interested in tech and entrepreneurship. I love basketball
-                            (TTP). I am trying to improve both my{' '}
-                            <a
-                                href='https://www.goodreads.com/user/show/155808148-matt-drapkin'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='text-blue-600 dark:text-blue-300'>
-                                reading
-                            </a>{' '}
-                            and{' '}
-                            <span
-                                className='cursor-pointer text-blue-600 dark:text-blue-300'
-                                onClick={() => scrollToSection('blog')}>
-                                writing
-                            </span>{' '}
-                            skills.
-                        </p>
-                        <p className='mb-4 text-lg'>
-                            Learn more about some of my side projects and rambling thoughts below.
-                        </p>
+                                rel='noopener noreferrer'>
+                                (PRINCO)
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            className='mt-16'>
+                            <button
+                                onClick={() => scrollToSection('projects')}
+                                className='border-2 border-[#1e5a35] px-8 py-3 text-sm font-medium uppercase tracking-wider text-[#1e5a35] transition-colors duration-300 hover:bg-[#1e5a35] hover:text-white dark:border-[#a6c9b5] dark:text-[#a6c9b5] dark:hover:bg-[#a6c9b5] dark:hover:text-[#1a1a1a]'>
+                                View Projects
+                            </button>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Column: Image with Decorative Rotating Blob BG */}
+                    <div className='relative order-1 flex items-center justify-center md:order-2'>
+                        {/* Rotating blob as background, always behind everything */}
+                        <motion.div
+                            aria-hidden
+                            className='absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2'
+                            style={{ width: 480, height: 480 }}
+                            animate={{ rotate: 360 }}
+                            transition={{
+                                duration: 20,
+                                repeat: Infinity,
+                                ease: 'linear',
+                                repeatType: 'loop',
+                            }}>
+                            <svg
+                                width='100%'
+                                height='100%'
+                                viewBox='0 0 480 480'
+                                fill='none'
+                                xmlns='http://www.w3.org/2000/svg'>
+                                <path
+                                    d='M240,0 C312,0,360,48,408,72 C456,96,480,168,480,240 C480,312,456,384,408,408 C360,432,312,480,240,480 C168,480,120,432,72,408 C24,384,0,312,0,240 C0,168,24,96,72,72 C120,48,168,0,240,0 Z'
+                                    fill='#d5d7f0'
+                                    className='dark:fill-[#384d41]'
+                                />
+                            </svg>
+                        </motion.div>
+                        {/* Photo always on top, centered */}
+                        <div
+                            className='relative flex items-center justify-center'
+                            style={{ width: 400, height: 400 }}>
+                            <Image
+                                src='/yc-ai-sus-selfie.jpeg'
+                                alt='Matt Drapkin'
+                                width={400}
+                                height={400}
+                                priority
+                                style={{ objectFit: 'cover' }}
+                                className='rounded-lg border-4 border-white shadow-xl dark:border-neutral-900'
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -212,7 +235,7 @@ export default function Home() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className='group relative rounded-2xl border border-neutral-200 bg-white p-6 transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900'>
                                 <div className='mb-2 flex items-center gap-4'>
-                                    <span className='rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'>
+                                    <span className='rounded-full bg-[#feffff] px-3 py-1 text-xs font-medium text-[#1e5a35] dark:bg-[#333d37] dark:text-[#a6c9b5]'>
                                         {article.category}
                                     </span>
                                     <time className='text-sm text-neutral-500 dark:text-neutral-400'>
@@ -220,7 +243,7 @@ export default function Home() {
                                     </time>
                                 </div>
                                 <Link href={`/blog/${article.slug}`}>
-                                    <h2 className='mb-2 flex items-center gap-2 text-xl font-semibold text-neutral-900 transition-colors group-hover:text-blue-600 dark:text-neutral-100 dark:group-hover:text-blue-400'>
+                                    <h2 className='mb-2 flex items-center gap-2 text-xl font-semibold text-[#1e5a35] transition-colors group-hover:text-[#496953] dark:text-[#e9f0ec] dark:group-hover:text-[#b7d1c1]'>
                                         {article.slug === 'yc-ai-sus' && (
                                             <Image
                                                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Y_Combinator_logo.svg/1200px-Y_Combinator_logo.svg.png'
@@ -245,20 +268,8 @@ export default function Home() {
                                 </p>
                                 <Link
                                     href={`/blog/${article.slug}`}
-                                    className='mt-4 inline-flex items-center text-sm font-medium text-blue-600 transition-colors group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300'>
-                                    Read more
-                                    <svg
-                                        className='ml-1 size-4'
-                                        fill='none'
-                                        stroke='currentColor'
-                                        viewBox='0 0 24 24'>
-                                        <path
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                            strokeWidth={2}
-                                            d='M13 7l5 5m0 0l-5 5m5-5H6'
-                                        />
-                                    </svg>
+                                    className='text-[#1e5a35] hover:text-[#496953] hover:underline dark:text-[#a6c9b5] dark:hover:text-[#b7d1c1]'>
+                                    Read more →
                                 </Link>
                             </motion.article>
                         ))}

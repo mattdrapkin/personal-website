@@ -101,10 +101,10 @@ export default function YCAIStartupSchool() {
                             (Cofounder, CSO at Anthropic)
                         </span>
                     </span>
-                    <span className='mb-6 bg-yellow-600 px-2 py-1 font-bold text-black'>
+                    <p className='mb-6 bg-yellow-600 px-2 py-1 font-bold text-black'>
                         Scaling laws continue to guide AI progress. What’s left to build around it
                         is simple.
-                    </span>
+                    </p>
                     <p className='my-6'>
                         The relationships discovered between compute, dataset size, parameters, and
                         model accuracy has paved the way for massive AI progress over the last
