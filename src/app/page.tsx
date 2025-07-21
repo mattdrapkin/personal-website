@@ -62,6 +62,12 @@ const articles = [
 // Reusing the projects data
 const slideData = [
     {
+        title: 'Speakwise',
+        button: 'Learn more',
+        src: '/sw_cover.png',
+        goto: 'speakwise',
+    },
+    {
         title: 'QuickCase',
         button: 'Learn more',
         src: '/qc_cover.png',
