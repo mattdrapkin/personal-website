@@ -14,7 +14,7 @@ export default function YCAIStartupSchool() {
                 className='mx-auto max-w-3xl'>
                 <h1 className='mb-4 text-4xl font-bold'>
                     <Image
-                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Y_Combinator_logo.svg/1200px-Y_Combinator_logo.svg.png'
+                        src='/Y_Combinator_logo.png'
                         alt='Y Combinator Logo'
                         width={28}
                         height={28}

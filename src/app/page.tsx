@@ -118,21 +118,13 @@ export default function Home() {
                 <div className='mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2'>
                     {/* Left Column: Large Typography */}
                     <div className='order-2 flex flex-col md:order-1'>
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className='mb-3 text-sm font-medium uppercase tracking-widest text-[#1e5a35] dark:text-[#a6c9b5]'>
-                            Matt Drapkin
-                        </motion.div>
-
                         <motion.h1
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1, delay: 0.2 }}
                             className='mb-12 font-serif text-[5rem] leading-none tracking-tight text-[#1e5a35] dark:text-[#e9f0ec] md:text-[7rem]'>
-                            <div className='block'>TECH</div>
-                            <div className='block'>BUILDER</div>
+                            <div className='block'>MATT</div>
+                            <div className='block'>DRAPKIN</div>
                         </motion.h1>
 
                         <motion.h2
@@ -151,14 +143,14 @@ export default function Home() {
                             className='max-w-md text-lg text-[#496953] dark:text-[#b7d1c1]'>
                             <div className='flex items-center gap-4'>
                                 <Image
-                                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Princeton_seal.svg/800px-Princeton_seal.svg.png'
+                                    src='/princeton_logo.png'
                                     alt='Princeton'
                                     width={48}
                                     height={48}
                                     className='shrink-0'
                                 />
                                 <span>
-                                    Princeton CS &apos;25 &middot; Investment Analyst at{' '}
+                                    Princeton CS &apos;25 &middot; Investor at{' '}
                                     <Link
                                         href='https://princo.princeton.edu/'
                                         target='_blank'
@@ -277,7 +269,7 @@ export default function Home() {
                                     <h2 className='mb-2 flex items-center gap-2 text-xl font-semibold text-[#1e5a35] transition-colors group-hover:text-[#496953] dark:text-[#e9f0ec] dark:group-hover:text-[#b7d1c1]'>
                                         {article.slug === 'yc-ai-sus' && (
                                             <Image
-                                                src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Y_Combinator_logo.svg/1200px-Y_Combinator_logo.svg.png'
+                                                src='/Y_Combinator_logo.png'
                                                 alt='Y Combinator Logo'
                                                 width={28}
                                                 height={28}
